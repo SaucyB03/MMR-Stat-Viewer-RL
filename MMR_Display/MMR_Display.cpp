@@ -170,12 +170,12 @@ void MMR_Display::Render()
 
 
 	//Won't display menu unless in an online game
-	//if (!gameWrapper->IsInOnlineGame()) {
-	//	if (isWindowOpen_) {
-	//		ImGui::End();
-	//	}
-	//	return;
-	//}
+	if (!gameWrapper->IsInOnlineGame()) {
+		if (isWindowOpen_) {
+			ImGui::End();
+		}
+		return;
+	}
 
 	if (!UIFont) {
 		loadFonts();
